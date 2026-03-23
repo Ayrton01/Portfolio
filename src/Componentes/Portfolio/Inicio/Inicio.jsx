@@ -43,7 +43,7 @@ const Inicio = () => {
   return (
     <>
       {/* --- INÍCIO DA SEÇÃO HERO (O PAI) --- */}
-      <section id="inicio" className="relative flex flex-col items-center justify-center min-h-screen max-h-[850px] pt-32 pb-20 px-6 text-center overflow-hidden">
+      <section id="inicio" className="relative flex flex-col items-center justify-start md:justify-center min-h-screen pt-32 pb-20 px-6 text-center overflow-hidden">
         
         {/* 1. A MALHA (FILHO ABSOLUTO) */}
         <div className="absolute inset-0 z-0 bg-grid-pattern opacity-40 animate-[waveGrid_8s_linear_infinite]"></div>
@@ -53,7 +53,7 @@ const Inicio = () => {
 
         {/* 3. O CONTEÚDO (SUA CAIXA COM O TEXTO) */}
         {/* O 'relative z-10' garante que o texto fique NA FRENTE da malha e o backdrop-blur dá um efeito de vidro na caixa */}
-        <div className="relative z-10 bg-[#161822]/80 backdrop-blur-sm w-[95%] sm:w-[90%] md:w-full max-w-3xl mx-auto px-6 py-10 sm:px-10 md:px-16 md:py-16 rounded-3xl md:rounded-[40px] border border-white/5 shadow-2xl shadow-indigo-500/10 flex flex-col items-center overflow-hidden">
+        <div className="relative z-10 bg-[#161822]/80 backdrop-blur-sm w-[95%] sm:w-[90%] md:w-full max-w-3xl mx-auto px-6 pt-10 pb-12 sm:px-10 md:px-16 md:pt-16 md:pb-14 rounded-3xl md:rounded-[40px] border border-white/5 shadow-2xl shadow-indigo-500/10 flex flex-col items-center overflow-hidden">
           
           {/* O PULSO ELÉTRICO - Sincronizado em 8s com a malha */}
           <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 sm:w-300 sm:h-300 electric-pulse animate-[electricPulse_8s_ease-out_infinite] pointer-events-none z-0"></div>
@@ -92,7 +92,7 @@ const Inicio = () => {
             </div>
 
             {/* Botões - Ajustei o gap para telas menores */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full px-4 sm:px-0 mb-8 sm:mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full px-4 sm:px-0 mb-3 sm:mb-5">
               <a href={`https://wa.me/5592984894507?text=${mensagemWhatsApp}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-linear-to-r from-indigo-600 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:scale-105 transition-transform w-full sm:w-auto text-sm sm:text-base">
                 Iniciar Projeto →
               </a>
@@ -104,7 +104,7 @@ const Inicio = () => {
 
           {/* --- A SETINHA DE ROLE PARA BAIXO QUE VOCÊ QUERIA --- */}
           {/* Posicionada absolutamente no fundo da caixa */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 pointer-events-none z-10 animate-[scrollDownBounce_2s_ease-in-out_infinite]">
+          <div className="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 pointer-events-none z-10 animate-[scrollDownBounce_2s_ease-in-out_infinite]">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               width="24" 
