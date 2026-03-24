@@ -43,7 +43,7 @@ const Inicio = () => {
   return (
     <>
       {/* --- INÍCIO DA SEÇÃO HERO (O PAI) --- */}
-      <section id="inicio" className="relative flex flex-col items-center justify-start md:justify-center min-h-screen pt-32 pb-20 px-6 text-center overflow-hidden">
+      <section id="inicio" className="relative flex flex-col items-center justify-start md:justify-center min-h-[75vh] pt-20 pb-8 px-6 text-center overflow-hidden">
         
         {/* 1. A MALHA (FILHO ABSOLUTO) */}
         <div className="absolute inset-0 z-0 bg-grid-pattern opacity-40 animate-[waveGrid_8s_linear_infinite]"></div>
@@ -51,9 +51,9 @@ const Inicio = () => {
         {/* 2. O BRILHO/AURA (FILHO ABSOLUTO) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-indigo-500/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
 
-        {/* 3. O CONTEÚDO (SUA CAIXA COM O TEXTO) */}
-        {/* O 'relative z-10' garante que o texto fique NA FRENTE da malha e o backdrop-blur dá um efeito de vidro na caixa */}
-        <div className="relative z-10 bg-[#161822]/80 backdrop-blur-sm w-[95%] sm:w-[90%] md:w-full max-w-3xl mx-auto px-6 pt-10 pb-12 sm:px-10 md:px-16 md:pt-16 md:pb-14 rounded-3xl md:rounded-[40px] border border-white/5 shadow-2xl shadow-indigo-500/10 flex flex-col items-center overflow-hidden">
+        {/* 3. O CONTEÚDO */}
+        {/* O 'relative z-10' garante que o texto fique NA FRENTE da malha */}
+        <div className="relative z-10 w-[95%] sm:w-[90%] md:w-full max-w-3xl mx-auto px-6 pt-0 pb-4 sm:px-10 md:px-16 md:pt-4 md:pb-4 flex flex-col items-center">
           
           {/* O PULSO ELÉTRICO - Sincronizado em 8s com a malha */}
           <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 sm:w-300 sm:h-300 electric-pulse animate-[electricPulse_8s_ease-out_infinite] pointer-events-none z-0"></div>
