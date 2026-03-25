@@ -43,7 +43,7 @@ const Inicio = () => {
   return (
     <>
       {/* --- INÍCIO DA SEÇÃO HERO (O PAI) --- */}
-      <section id="inicio" className="relative flex flex-col items-center justify-center w-full pt-[10px] pb-[10px] px-6 text-center overflow-hidden">
+      <section id="inicio" className="relative flex flex-col items-center justify-start w-full pt-[90px] pb-[10px] px-6 text-center overflow-hidden">
         
         {/* 1. A MALHA (FILHO ABSOLUTO) */}
         <div className="absolute inset-0 z-0 bg-grid-pattern opacity-40 animate-[waveGrid_8s_linear_infinite]"></div>
