@@ -43,7 +43,7 @@ const Inicio = () => {
   return (
     <>
       {/* --- INÍCIO DA SEÇÃO HERO (O PAI) --- */}
-      <section id="inicio" className="relative flex flex-col items-center justify-start w-full pt-[90px] pb-[10px] px-6 text-center overflow-hidden">
+      <section id="inicio" className="relative flex flex-col items-center justify-start w-full pt-[110px] pb-[40px] px-6 text-center overflow-hidden">
         
         {/* 1. A MALHA (FILHO ABSOLUTO) */}
         <div className="absolute inset-0 z-0 bg-grid-pattern opacity-40 animate-[waveGrid_8s_linear_infinite]"></div>
@@ -53,12 +53,12 @@ const Inicio = () => {
 
         {/* 3. O CONTEÚDO */}
         {/* O 'relative z-10' garante que o texto fique NA FRENTE da malha */}
-        <div className="relative z-10 w-[95%] sm:w-[90%] md:w-full max-w-3xl mx-auto px-6 sm:px-10 md:px-16 flex flex-col items-center">
+        <div className="relative z-10 bg-[#161822]/80 backdrop-blur-sm w-[95%] sm:w-[90%] md:w-full max-w-3xl mx-auto px-6 pt-10 pb-12 sm:px-10 md:px-16 md:pt-16 md:pb-14 rounded-3xl md:rounded-[40px] border border-white/5 shadow-2xl shadow-indigo-500/10 flex flex-col items-center overflow-hidden">
           
           {/* O PULSO ELÉTRICO - Sincronizado em 8s com a malha */}
           <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 sm:w-300 sm:h-300 electric-pulse animate-[electricPulse_8s_ease-out_infinite] pointer-events-none z-0"></div>
 
-          <header className="max-w-3xl flex flex-col items-center gap-4 relative z-10 w-full text-center pb-12">
+          <header className="max-w-3xl flex flex-col items-center gap-4 relative z-10 w-full text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight leading-tight">
               Olá, eu sou
               <NomeAnimado />
