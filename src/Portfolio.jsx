@@ -5,7 +5,7 @@ import Servicos from './Componentes/Portfolio/Serviços/Servico';
 import MaisSolucoes from './Componentes/Portfolio/Serviços/MaisSolucoes';
 import Tecnologia from './Componentes/Portfolio/Tecnologia/Tecnologias';
 import Contato from './Componentes/Portfolio/Contato/Contato';
-import './index.css'
+import './Portfolio.css'
 
 function App() {
   // overflow-x-hidden previne de forma global as quebras de largura em telas menores

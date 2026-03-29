@@ -1,15 +1,15 @@
 import { useCallback, useState } from "react";
 import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim"; // Usaremos a versão slim para evitar erros
+import { loadSlim } from "tsparticles-slim";
 import { motion } from "framer-motion";
-// Importando as engrenagens e os dados de fora:
-import { techs, categoryColors, particlesOptions } from './ConstelacaoData';
+import { techs, categoryColors } from './ConstelacaoData';
+import useOtimizacaoConst from "./OtimizacaoConst";
 
 const Constelacao = () => {
   const [hoveredNode, setHoveredNode] = useState(null);
+  const { optimizedParticlesOptions, getDimmedClass, getAnimationProps } = useOtimizacaoConst();
 
   const particlesInit = useCallback(async (engine) => {
-    // Isso carrega o motor de partículas necessário para as linhas aparecerem
     await loadSlim(engine);
   }, []);
 
@@ -18,7 +18,7 @@ const Constelacao = () => {
       <Particles
         id="tsparticles"
         init={particlesInit}
-        options={particlesOptions}
+        options={optimizedParticlesOptions}
         className="w-full h-full"
       />
 
@@ -51,7 +51,7 @@ const Constelacao = () => {
         })}
       </svg>
 
-      {/* Camada de Texto com Brilho (Aura) igual ao print 1 */}
+      {/* Camada de Texto com os nós da tecnologia */}
       <div className="absolute inset-0 w-full h-full z-20 pointer-events-none">
         {techs.map((tech, i) => {
           const hexColor = categoryColors[tech.category] || "#ffffff";
@@ -62,24 +62,19 @@ const Constelacao = () => {
                             tech.links?.includes(hoveredNode) || 
                             techs[hoveredNode]?.links?.includes(i);
                             
-          const isDimmed = !isRelated;
+          const dimmedClass = getDimmedClass(isRelated);
+          const animationProps = getAnimationProps(i);
 
           return (
           <motion.div
             key={tech.name}
             onPointerEnter={(e) => e.pointerType === "mouse" && setHoveredNode(i)}
             onPointerLeave={(e) => e.pointerType === "mouse" && setHoveredNode(null)}
-            onClick={() => setHoveredNode(hoveredNode === i ? null : i)} // Toque no celular!
-            className={`absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-pointer group transition-[opacity,filter] duration-500 ${isDimmed ? "opacity-20 grayscale blur-[2px]" : "opacity-100"}`}
+            onClick={() => setHoveredNode(hoveredNode === i ? null : i)}
+            className={`absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-pointer group transition-[opacity,filter] duration-500 ${dimmedClass}`}
             style={{ top: tech.top, left: tech.left }}
-            animate={{ y: [0, -8, 0] }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.2, // Cada bolinha flutua em um tempo sutilmente diferente
-            }}
-            whileHover={{ scale: 1.15 }} // Aumenta ao passar o mouse
+            {...animationProps}
+            whileHover={{ scale: 1.15 }}
           >
             
             {/* Tooltip flutuante exibindo a categoria da legenda */}
@@ -92,7 +87,7 @@ const Constelacao = () => {
               </span>
             </div>
 
-            {/* O Círculo de fundo com brilho que faltava no seu print */}
+            {/* O Círculo */}
             <div className="relative flex items-center justify-center">
               <div 
                 className={`absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full blur-xl transition-opacity duration-300 ${isHovered ? "opacity-40" : "opacity-20 group-hover:opacity-40"}`}
