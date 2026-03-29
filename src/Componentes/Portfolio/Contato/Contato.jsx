@@ -35,14 +35,14 @@ const Contato = () => {
       <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
         
         {/* Títulos Centrais */}
-        <div className="text-center mb-18 md:mb-22">
+        <div className="text-center mb-12 md:mb-16">
           <span className="text-indigo-500 font-semibold tracking-widest text-sm uppercase">Contato</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 text-white">
             Vamos <span className="text-indigo-400">conversar?</span>
           </h2>
-          <p className="text-gray-400 mt-6 max-w-xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-4 sm:px-0">
-            Respondo em até 24h, escolha o melhor canal para você <br className="hidden sm:block" />
-            e vamos construir a solução ideal para o seu projeto.
+          <p className="text-gray-400 mt-10 max-w-xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-4 sm:px-0">
+            Aguardo sua mensagem para construirmos sua solução. <br className="hidden sm:block" />
+            Conecte-se comigo através do canal de sua preferência.
           </p>
         </div>
 
