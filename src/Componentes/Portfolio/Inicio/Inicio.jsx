@@ -1,43 +1,5 @@
-import { useState, useEffect } from 'react';
-
-const mensagemWhatsApp = encodeURIComponent(
-  "Olá Ayrton. Tenho uma ideia de projeto e gostaria de iniciar o seu desenvolvimento. Quais informações você precisa para uma análise inicial?"
-);
-
-const NomeAnimado = () => {
-  const [text, setText] = useState('Ayrton'); 
-  const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = 'Ayrton';
-
-  useEffect(() => {
-    let timer;
-    if (!isDeleting) {
-      if (text === fullText) {
-        timer = setTimeout(() => setIsDeleting(true), 5000);
-      } else {
-        timer = setTimeout(() => setText(fullText.substring(0, text.length + 1)), 150);
-      }
-    } else {
-      if (text === '') {
-        setIsDeleting(false);
-        timer = setTimeout(() => {}, 400);
-      } else {
-        timer = setTimeout(() => setText(fullText.substring(0, text.length - 1)), 100);
-      }
-    }
-    return () => clearTimeout(timer);
-  }, [text, isDeleting]);
-
-  return (
-    <span className="flex items-center justify-center mt-1 h-[1.2em]">
-      <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-purple-400">
-        {text}
-      </span>
-      {/* Cursor piscando na cor roxa combinando com o final do degradê */}
-      <span className="w-0.75 sm:w-1.25 h-[0.9em] bg-purple-400 animate-[pulse_1s_infinite] ml-2 sm:ml-3 rounded-full opacity-80"></span>
-    </span>
-  );
-};
+import NomeAnimado from './NomeAnimado'; // Ajuste o caminho se necessário
+import {whatsapp_URL} from './links';
 
 const Inicio = () => {
   return (
@@ -93,7 +55,7 @@ const Inicio = () => {
 
             {/* Botões - Ajustei o gap para telas menores */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full px-4 sm:px-0 mb-3 sm:mb-5">
-              <a href={`https://wa.me/5592984894507?text=${mensagemWhatsApp}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-linear-to-r from-indigo-600 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:scale-105 transition-transform w-full sm:w-auto text-sm sm:text-base">
+              <a href={`${whatsapp_URL}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-linear-to-r from-indigo-600 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:scale-105 transition-transform w-full sm:w-auto text-sm sm:text-base">
                 Iniciar Projeto →
               </a>
               <a href="#servicos" className="flex items-center justify-center border border-gray-700 hover:bg-gray-800 px-6 sm:px-8 py-3 rounded-full font-medium transition w-full sm:w-auto text-sm sm:text-base">
