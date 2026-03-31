@@ -1,5 +1,5 @@
 import NomeAnimado from './NomeAnimado'; // Ajuste o caminho se necessário
-import {whatsapp_URL} from './links';
+import {whatsapp_URL} from './LinkZAP';
 
 const Inicio = () => {
   return (
