@@ -1,13 +1,27 @@
+// --- DADOS DOS SERVIÇOS (MOCK DATABASE) ---
+// Este arquivo atua como um "banco de dados" local estático para a seção de serviços.
+// Ele centraliza os textos, cores e ícones, separando a INFORMAÇÃO do LAYOUT.
+// Vantagem: Para adicionar ou remover um serviço do site no futuro, você só precisa
+// mexer neste array, sem precisar encostar em nenhuma linha de código HTML/Tailwind.
+
+// Exportamos a constante 'meusServicos' (array de objetos) para importá-la dentro de 'Servico.jsx'.
 export const meusServicos = [
   {
+    // 'cor': Variável dinâmica (hexadecimal) que será injetada no CSS via React para pintar as animações deste card específico.
     cor: "#fbbf24",
+    // Textos descritivos que serão recebidos via 'props' pelo componente 'CardServico'.
     problema: "Meu site está lento e afastando clientes",
     solucao: "Otimização de Performance",
     descricao: "Análise completa e otimização para garantir carregamento rápido e melhor experiência do usuário.",
+    // Array de tecnologias/métodos. O método .map() lá no CardServico vai transformar cada string dessa em uma "pílula" (tag) visual.
     tags: ["Análise de gargalos", "Otimização de código", "Cache inteligente", "CDN"],
+    // O JSX permite armazenar elementos HTML/SVG diretamente dentro de variáveis JavaScript.
+    // Esses ícones (icon e iconeCentral) serão inseridos direto na estrutura visual do card.
     icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>,
     iconeCentral: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
   },
+  // --- DEMAIS SERVIÇOS ---
+  // Os objetos abaixo seguem exatamente a mesma "interface" (estrutura de chaves) definida acima, garantindo que o CardServico não quebre.
   {
     cor: "#38bdf8",
     problema: "Preciso de um site/app do zero",
